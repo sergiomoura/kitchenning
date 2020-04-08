@@ -1,3 +1,16 @@
+<?php
+	
+	include("pratos.php");
+
+	/*
+	echo "<pre>";
+	print_r($pratos);
+	echo "</pre>";
+	exit;
+	*/
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +37,15 @@
 		
 	<img id="banner" src="./img/img-banner.jpg" alt="Carne Suculenta" class="container">
 	<main class="container">
+		<?php foreach($pratos as $i => $prato) { ?>
+		<div class="produto">
+			<img src="<?= $prato['img'] ?>" alt="Produto 1">
+			<h2><?= $prato['nome'] ?></h2>
+			<p><?= $prato['descricao'] ?></p>
+			<a href="prato.php?pos=<?=$i?>">Ver Mais</a>
+		</div>
+		<?php } ?>
+		<!--
 		<div class="produto">
 			<img src="./img/img-pdto-1.jpg" alt="Produto 1">
 			<h2>Lorem Ipsum</h2>
@@ -54,12 +76,7 @@
 			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa eaque maiores id iusto ducimus unde cumque minus quaerat, sint inventore fugit incidunt, officiis a dolorem. Autem itaque sit numquam pariatur.</p>
 			<a href="#">Ver Mais</a>
 		</div>
-		<div class="produto">
-			<img src="./img/img-pdto-1.jpg" alt="Produto 1">
-			<h2>Lorem Ipsum</h2>
-			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa eaque maiores id iusto ducimus unde cumque minus quaerat, sint inventore fugit incidunt, officiis a dolorem. Autem itaque sit numquam pariatur.</p>
-			<a href="#">Ver Mais</a>
-		</div>
+		-->
 	</main>
 	<footer class="container">
 		<nav>
